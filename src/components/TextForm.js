@@ -11,7 +11,8 @@ export default function TextForm(props) {
   };
 
   const ChangeUpperCase = () => {
-    setText(text.toUpperCase());
+    let newText = text.toUpperCase();
+    setText(newText);
   };
 
   return (
