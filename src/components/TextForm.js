@@ -13,24 +13,29 @@ export default function TextForm(props) {
   const ChangeUpperCase = () => {
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted in UpperCase", "success");
   };
   const ChangeLowerCase = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted in LowerCase", "success");
   };
 
   const ClearText = () => {
     let newText = "";
     setText(newText);
+    props.showAlert("Cleared the text ", "success");
   };
   const RemoveExtraSpace = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("Removed extra spaces ", "success");
   };
   const CopyText = () => {
     var text = document.getElementById("textBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Text is coppied to clipboard ", "success");
   };
 
   return (
