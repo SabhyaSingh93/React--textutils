@@ -40,7 +40,10 @@ export default function TextForm(props) {
 
   return (
     <>
-      <div className="container mt-3">
+      <div
+        className="container mt-3"
+        style={{ color: props.mode === "dark" ? "white" : "#042743" }}
+      >
         <div className=" mb-3">
           <h2>{props.heading}</h2>
           <textarea
@@ -50,6 +53,10 @@ export default function TextForm(props) {
             id="textBox"
             rows="10"
             placeholder="write text here."
+            style={{
+              backgroundColor: props.mode === "dark" ? "#13466e" : "white",
+              color: props.mode === "dark" ? "white" : "#042743",
+            }}
           ></textarea>
         </div>
         <div className="btn btn-primary" onClick={ChangeUpperCase}>
@@ -66,7 +73,13 @@ export default function TextForm(props) {
         <div className="btn btn-primary mx-1" onClick={CopyText}>
           Copy Text
         </div>
-        <div className="container card border-info mb-3 my-3">
+        <div
+          className="container card border-info mb-3 my-3"
+          style={{
+            backgroundColor: props.mode === "dark" ? "#13466e" : "white",
+            color: props.mode === "dark" ? "white" : "#042743",
+          }}
+        >
           <h2>Your Text Summary</h2>
           <p>
             <b>Characters : </b>
@@ -86,9 +99,15 @@ export default function TextForm(props) {
             {text.split(/[".!?"]/).length - 1}{" "}
           </p>
         </div>
-        <div className="container card border-info mb-3 my-3">
+        <div
+          className="container card border-info mb-3 my-3"
+          style={{
+            backgroundColor: props.mode === "dark" ? "#13466e" : "white",
+            color: props.mode === "dark" ? "white" : "#042743",
+          }}
+        >
           <h2>Preview</h2>
-          <p>{text}</p>
+          <p>{text.length > 0 ? text : "write something to preview "}</p>
         </div>
       </div>
     </>
